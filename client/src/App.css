@@ -1,0 +1,137 @@
+// react-bot/src/App.css
+.App {
+  padding-top: 10vh;
+
+  height: 80vh;
+  width: 60vw;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+html, body {
+  font: 14px/1.21 'Helvetica Neue', arial, sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  background-image: url('./icons/bgcrop1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-window {
+  padding-top: 20px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.conversation-view {
+  width: 100%;
+  height: 65vh;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  border: 5px solid #3D1D0E;
+  border-radius: 25px;
+  overflow-y: scroll;
+}
+
+
+.conversation-view::-webkit-scrollbar {
+  width: 1em;
+}
+
+.conversation-view::-webkit-scrollbar-thumb {
+  background-color: #9B745A;
+  border-radius: 20px;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+.message-box {
+  width: 100%;
+  padding: 20px 20px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 5px;
+  border: 5px solid #3D1D0E;
+  border-radius: 20px;
+  outline: none;
+  font-size:20px;
+  color: #9E6E5A;
+  text-indent: 10px;
+}
+
+button {
+  background: #fff;
+  color: #666666;
+
+  border-radius: 20px;
+  border: 5px solid #3D1D0E;
+  box-sizing: border-box;
+
+  font-size: 20px;
+
+  height: 100%;
+  width: 100%;
+
+  outline: none;
+}
+
+p {
+ padding: 5px;
+ color: #3D1D0E;
+}
+
+.button-container {
+  float: left;
+  width: 20%;
+  margin: 5px;
+}
+
+
+.input-container {
+  float: left;
+  width: 77%;
+  margin: 5px;
+}
+
+::-webkit-input-placeholder {
+  color: #9B745A;
+}
+
+.chat-bubble {
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  max-width: 500px;
+  text-align: left;
+}
+
+.chat-bubble.ai {
+  justify-content: flex-end;
+  margin-left: 12vw;
+}
+
+.chat-bubble.ai .chat-content {
+  background-color: #86D0E2;
+}
+
+.chat-content {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #ED6141;
+  color: white;
+  border-radius: 25px;
+}
