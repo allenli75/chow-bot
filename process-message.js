@@ -42,6 +42,14 @@ const processMessage = message => {
     .detectIntent(request)
     .then(responses => {
       const result = responses[0].queryResult;
+
+      if (result.intent.displayName === 'recipe') {
+        const ingred = result.parameters.fields['ingredient'].stringValue;
+        return pusher.trigger('bot', 'bot-response', {
+          message: "&" + ingred,
+        });
+      }
+
       return pusher.trigger('bot', 'bot-response', {
         message: result.fulfillmentText,
       });
