@@ -1,0 +1,11 @@
+{
+  "tomatoes": ["Bolognese Sauce", "Chicken Parmesan"],
+  "chicken": ["Chicken Parmesan", "Chicken and Broccoli Stir Fry", "Burrito Bowl", "Chicken Fried Rice"],
+  "tofu": ["Mapo Tofu", "Kimchi Jjigae"],
+  "beans": ["Burrito Bowl"],
+  "shrimp": ["Lemon Garlic Shrimp Pasta", "Shrimp Fried Rice"],
+  "spinach": ["Lemon Garlic Shrimp Pasta", "Avocado Salad"],
+  "avocado": ["Avocado Salad", "Burrito Bowl"],
+  "broccoli": ["Easy Macaroni and Cheese", "Chicken and Broccoli Stir Fry"],
+  "turkey": ["Swedish Turkey Meatballs", "Mapo Tofu"]
+}
