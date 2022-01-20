@@ -1,5 +1,5 @@
+require('dotenv').config({ path: 'variables.env' });
 const Dialogflow = require('@google-cloud/dialogflow');
-const res = require('express/lib/response');
 
 const projectId = 'thing-sbdsib';
 const sessionId = '123456';
