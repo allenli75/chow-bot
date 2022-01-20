@@ -29,7 +29,11 @@ const processMessage = message => {
     return sessionClient
       .detectIntent(request)
       .then(res => {
-        return res[0].queryResult
+        result = res[0].queryResult
+        return {
+          intent: result.intent.displayName,
+          text: result.fulfillmentText
+        };
       })
       .catch(err => {
         console.error('ERROR:', err);
