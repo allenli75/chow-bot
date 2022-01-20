@@ -1,0 +1,27 @@
+.chat-bubble {
+    display: flex;
+    padding: 6px 20px;
+    color: white;
+}
+
+.chat-bubble.user {
+    justify-content: flex-end;
+}
+
+.chat-content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    max-width: 50%;
+    border-radius: 18px;
+    padding: 10px 12px;
+    word-wrap: break-word;
+}
+
+.chat-content.user {
+    background-color: var(--blue);
+}
+
+.chat-content.bot {
+    background-color: var(--red);
+}
