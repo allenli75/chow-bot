@@ -32,9 +32,9 @@ const Chat = () => {
       })
       .then((res) => res.json())
       .then((data) => {
-        if (data.intent !== "recipe") {
+        if (data.intent.displayName !== "recipe") {
           const message = {
-            content: data.text,
+            content: data.fulfillmentText,
             user: 'bot'
           };
           setMessages([...messages, message]);
