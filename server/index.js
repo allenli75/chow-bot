@@ -17,7 +17,7 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.post("/api/chat", (req, res) => {
     const { message } = req.body;
-    response = processMessage(message).then((data) => res.json(data));
+    response = processMessage(message).then((data) => res.send(data));
 });
 
 app.listen(PORT, () => {
