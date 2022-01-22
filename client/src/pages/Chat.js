@@ -11,6 +11,7 @@ const Chat = () => {
     const [messagesTemp, setMessagesTemp] = useState([]);
     const [messages, setMessages] = useState([]);
     const [chatInput, setChatInput] = useState('');
+    const [isResponding, setIsResponding] = useState(false);
 
     const chatBubbles = messages.map((message, i) => (
         <Message
@@ -37,6 +38,7 @@ const Chat = () => {
             content: data.text,
             user: 'bot'
           };
+          setIsResponding(false);
           setMessages([...messages, message]);
         }
       })
@@ -55,6 +57,7 @@ const Chat = () => {
           user: 'user'
         };
 
+        setIsResponding(true);
         setMessagesTemp([...messages, message]);
         setMessages([...messages, message]);
     };
@@ -73,7 +76,10 @@ const Chat = () => {
         </div>
         <div className="animate__animated animate__fadeIn">
           <div className="chat-window">
-              <div>{chatBubbles}</div>
+              <div>
+                {chatBubbles}
+                {isResponding ? <Message message={'...'} sender={'bot'}/> : null}
+              </div>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="user-input">
