@@ -1,4 +1,4 @@
-// require('dotenv').config({ path: 'variables.env' });
+require('dotenv').config({ path: 'variables.env' });
 
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -17,7 +17,12 @@ app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 app.post("/api/chat", (req, res) => {
     const { message } = req.body;
-    response = processMessage(message).then((data) => res.json(data));
+    response = processMessage(message)
+    .then((data) => res.json(data))
+    .catch(err => {
+        console.error('error here :P');
+        console.error('ERROR:', err);
+    });
 });
 
 app.listen(PORT, () => {
