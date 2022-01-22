@@ -31,6 +31,7 @@ const Chat = () => {
         }),
       })
       .then((res) => {
+        console.log("hello?");
         console.log(res);
         res.json();
       })
