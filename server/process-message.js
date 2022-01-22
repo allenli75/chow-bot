@@ -1,4 +1,3 @@
-require('dotenv').config({ path: 'variables.env' });
 const Dialogflow = require('@google-cloud/dialogflow');
 
 const projectId = 'thing-sbdsib';
