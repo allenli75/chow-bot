@@ -29,7 +29,6 @@ const processMessage = message => {
       .detectIntent(request)
       .then(res => {
         result = res[0].queryResult
-        console.log(result);
         return {
           intent: result.intent.displayName,
           text: result.fulfillmentText

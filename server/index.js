@@ -20,7 +20,6 @@ app.post("/api/chat", (req, res) => {
     response = processMessage(message)
     .then((data) => res.json(data))
     .catch(err => {
-        console.error('error here :P');
         console.error('ERROR:', err);
     });
 });
