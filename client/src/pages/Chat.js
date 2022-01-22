@@ -30,11 +30,7 @@ const Chat = () => {
           message: chatInput,
         }),
       })
-      .then((res) => {
-        console.log("hello?");
-        console.log(res);
-        res.json();
-      })
+      .then(res => res.json())
       .then((data) => {
         if (data.intent !== "recipe") {
           const message = {
