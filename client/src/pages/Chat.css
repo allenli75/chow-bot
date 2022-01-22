@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column-reverse;
     width: 80vw;
-    height: 60vh;
+    height: 55vh;
     background-color: white;
     border: 3px var(--darkbrown) solid;
     border-radius: 10px;
