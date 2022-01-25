@@ -32,7 +32,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 /** API BEGINS HERE */ 
 /**
  * GET /api/recipe
- *   Retrieves recipes matching URL query param from MongoDB
+ *   Retrieve recipes matching URL query params from MongoDB
  */
 app.get("/api/recipe", (req, res) => {
     const name = req.query.name;
@@ -45,7 +45,7 @@ app.get("/api/recipe", (req, res) => {
 
 /**
  * POST /api/chat
- *   Submits user message to Dialogflow for intent detection and returns response
+ *   Submit user message to Dialogflow for intent detection and return response
  */
 app.post("/api/chat", (req, res) => {
     const { message } = req.body;
