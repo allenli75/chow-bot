@@ -40,6 +40,7 @@ app.get("/api/recipe", (req, res) => {
         recipes = findRecipes(client, name, 1)
         .then(data => res.json(data[0]));
     });
+    client.close();
 });
 
 /**
