@@ -31,7 +31,8 @@ const processMessage = message => {
         result = res[0].queryResult
         return {
           intent: result.intent.displayName,
-          text: result.fulfillmentText
+          text: result.fulfillmentText,
+          params: result.parameters,
         };
       })
       .catch(err => {

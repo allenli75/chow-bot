@@ -64,38 +64,38 @@ const Chat = () => {
 
     return(
         <>
-        <div className="animate__animated animate__rubberBand">
-          <Link to="/">
-            <img
-              src={require("../assets/logo.png")}
-              height="80"
-              alt="logo"
-              className="logo"
-            />
-          </Link>
-        </div>
-        <div className="animate__animated animate__fadeIn">
-          <div className="chat-window">
-              <div>
-                {chatBubbles}
-                {isResponding ? <Message message={'...'} sender={'bot'}/> : null}
-              </div>
+          <div className="animate__animated animate__rubberBand">
+            <Link to="/">
+              <img
+                src={require("../assets/logo.png")}
+                height="80"
+                alt="logo"
+                className="logo"
+              />
+            </Link>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div className="user-input">
-                <input
-                  value={chatInput}
-                  onChange={(e) => setChatInput(e.target.value)}
-                  className="chat-input"
-                  type="text"
-                  placeholder="Let's get cooking!"
-                />
-                <button className="chat-submit">
-                    <ArrowUpwardRoundedIcon/>
-                </button>
-              </div>
-          </form>
-        </div>
+          <div className="animate__animated animate__fadeIn">
+            <div className="chat-window">
+                <div>
+                  {chatBubbles}
+                  {isResponding ? <Message message={'...'} sender={'bot'}/> : null}
+                </div>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="user-input">
+                  <input
+                    value={chatInput}
+                    onChange={(e) => setChatInput(e.target.value)}
+                    className="chat-input"
+                    type="text"
+                    placeholder="Let's get cooking!"
+                  />
+                  <button className="chat-submit">
+                      <ArrowUpwardRoundedIcon/>
+                  </button>
+                </div>
+            </form>
+          </div>
         </>
         
     );
