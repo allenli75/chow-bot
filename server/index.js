@@ -6,6 +6,7 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const processMessage = require('./process-message');
+const findRecipes = require('./find-recipes');
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,10 +16,24 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-// MongoDB setup
+/** Render views on server's side */
+app.get("/chat", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+});
+
+app.get("/recipe/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
+});
+
+/** MongoDB setup */ 
 const uri = "mongodb+srv://allenli:" + process.env.MONGODB_USER_PASSWORD + "@cluster0.tglxh.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
+/** API BEGINS HERE */ 
+/**
+ * GET /api/recipe
+ *   Retrieves recipes matching URL query param from MongoDB
+ */
 app.get("/api/recipe", (req, res) => {
     const name = req.query.name;
     client.connect(err => {
@@ -27,12 +42,10 @@ app.get("/api/recipe", (req, res) => {
     });
 });
 
-async function findRecipes(client, recipeName, limit) {
-    const cursor = client.db("chow_bot").collection("recipes").find({uri_name: recipeName}).limit(limit);
-    const recipes = await cursor.toArray();
-    return recipes;
-}
-
+/**
+ * POST /api/chat
+ *   Submits user message to Dialogflow for intent detection and returns response
+ */
 app.post("/api/chat", (req, res) => {
     const { message } = req.body;
     response = processMessage(message)
