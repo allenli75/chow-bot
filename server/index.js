@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-/** Render views on server's side */
+/** Render views on server side */
 app.get("/chat", (req, res) => {
     res.sendFile(path.resolve(__dirname, "../client/build/index.html"));
 });
