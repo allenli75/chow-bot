@@ -4,9 +4,9 @@
   --darkblue: #1c9cbd;
   --brown: #9B745A;
   --darkbrown: #3D1D0E;
-  --offwhite: #FFF8F2;
+  --offwhite: #fffaee;
   --red: #ED6141;
-  --lightred: #ec7e65;
+  --lightyellow: #fff2d2;
   background-color: var(--lightblue);
 }
 
@@ -36,7 +36,7 @@ h2 {
 }
 
 h3 {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 ol {

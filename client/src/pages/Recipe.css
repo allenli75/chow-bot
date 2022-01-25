@@ -11,6 +11,8 @@
 
 .recipe-card .logo {
     margin: -54px 0px 0px 0px;
+    -webkit-filter: none;
+    filter: none;
 }
 
 .recipe-heading {
@@ -24,16 +26,16 @@
     display: flex;
 }
 
-.cook-time, .servings {
+.cook-time, .servings, .separator {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 8px;
+    margin: 0px 4px;
     color: var(--red);
 }
 
 .name {
-    margin: 12px 0px -4px 0px;
+    margin: 12px 0px 0px 0px;
 }
 
 .heading-icon {

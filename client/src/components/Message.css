@@ -25,3 +25,17 @@
 .chat-content.bot {
     background-color: var(--red);
 }
+
+.recipe-link-row a {
+    text-decoration: none;
+    color: var(--lightyellow);
+}
+
+.recipe-link-row a:hover {
+    color: var(--offwhite);
+    transition-duration: 200ms;
+}
+
+.chat-link-icon {
+    transform: scale(0.8);
+}

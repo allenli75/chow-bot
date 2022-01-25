@@ -6,7 +6,7 @@ const cors = require('cors');
 const express = require('express');
 const path = require('path');
 const processMessage = require('./process-message');
-const findRecipes = require('./find-recipes');
+const { findRecipe, filterRecipes, filterCategory, filterCourse } = require('./find-recipes');
 
 const PORT = process.env.PORT || 3001;
 
@@ -37,7 +37,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 app.get("/api/recipe", (req, res) => {
     const name = req.query.name;
     client.connect(err => {
-        recipes = findRecipes(client, name, 1)
+        findRecipe(client, name, 1)
         .then(data => res.json(data[0]));
     });
 });
@@ -48,8 +48,29 @@ app.get("/api/recipe", (req, res) => {
  */
 app.post("/api/chat", (req, res) => {
     const { message } = req.body;
-    response = processMessage(message)
-    .then((data) => res.json(data))
+    processMessage(message)
+    .then((data) => {
+        if (data.intent === 'recipe') {
+            client.connect(err => {
+                filterRecipes(client, data, 10)
+                .then(data => {
+                    const response = {
+                        intent: data.intent,
+                        text: data.text,
+                        recipes: data.recipes,
+                    }
+                    res.json(response);
+                });
+            });
+        } else {
+            const response = {
+                intent: data.intent,
+                text: data.text,
+                recipes: [],
+            };
+            res.json(response);
+        }
+    })
     .catch(err => {
         console.error('ERROR:', err);
     });

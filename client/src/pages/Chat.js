@@ -3,6 +3,7 @@ import Message from '../components/Message.js';
 import './Chat.css';
 import 'animate.css';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import LinkRoundedIcon from '@mui/icons-material/LinkRounded';
 import {
   Link
 } from 'react-router-dom';
@@ -33,14 +34,27 @@ const Chat = () => {
       })
       .then(res => res.json())
       .then((data) => {
+        let message = {}
         if (data.intent !== "recipe") {
-          const message = {
-            content: data.text,
-            user: 'bot'
-          };
-          setIsResponding(false);
-          setMessages([...messages, message]);
+          message = {content: data.text, user: 'bot'};
+        } else {
+          if (data.recipes.length === 0) {
+            message = {content: "Sorry, Chow Bot doesn't know how to cook that yet!", user: "bot"};
+          } else {
+            let recipeLinks = ["I found some recipes for you!"];
+            data.recipes.forEach((recipe, i) => {
+              recipeLinks.push(
+                <div className="recipe-link-row">
+                  <Link target="_blank" rel="noopener noreferrer" className="recipe-link" key={`link-${i}`} to={"/recipe/" + recipe.name.toLowerCase().replaceAll(" ", "-")}>
+                    🍴{recipe.name}
+                  </Link>
+                </div>);
+            });
+            message = {content: recipeLinks, user: "bot"};
+          }
         }
+        setIsResponding(false);
+        setMessages([...messages, message]);
       })
       .catch((error) => {
         console.error('Error:', error);

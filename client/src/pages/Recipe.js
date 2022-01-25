@@ -10,7 +10,7 @@ import {
 const Recipe = () => {
   const name = useParams().name;
   const [recipe, setRecipe] = useState({
-    ingredients: [],
+    ingredients_text: [],
     steps: []
   });
 
@@ -24,7 +24,7 @@ const Recipe = () => {
     .then(data => setRecipe(data));
   }, []);
 
-  const ingredients = recipe.ingredients.map((ingredient, i) => <li key={i}>{ingredient}</li>);
+  const ingredients = recipe.ingredients_text.map((ingredient, i) => <li key={i}>{ingredient}</li>);
   const steps = recipe.steps.map((step, i) => <li key={i}>{step}</li>);
 
   return(
@@ -49,6 +49,9 @@ const Recipe = () => {
                 <div className="cook-time">
                   <AlarmRoundedIcon className="heading-icon"/>
                   <h3>{recipe.cook_time}</h3>
+                </div>
+                <div className="separator">
+                  <h3>|</h3>
                 </div>
                 <div className="servings">
                   <RestaurantRoundedIcon className="heading-icon"/>

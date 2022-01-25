@@ -60,6 +60,8 @@
 
 .logo{
     margin-top: 30px;
+    -webkit-filter: drop-shadow(4px 4px 4px var(--darkblue));
+    filter: drop-shadow(4px 4px 0px var(--darkblue));
 }
 
 .animate__animated.animate__fadeIn {
