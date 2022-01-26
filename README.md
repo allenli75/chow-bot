@@ -7,4 +7,4 @@ agent extracts the intent of the user's message and any necessary parameters and
 Node backend to form a response for the user.
 ## Watch a recorded demo below! 🎥
 https://user-images.githubusercontent.com/46834662/151103975-9c976adf-5fa4-4957-aca7-3dcb9030ecd7.mov
-## Visit a [live demo](https://chow-bot.herokuapp.com) of the app! 🔗
+## Visit a [live demo](https://chow-bot-v2.herokuapp.com) of the app! 🔗
