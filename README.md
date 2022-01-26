@@ -6,4 +6,4 @@ in React, users submit messages that are processed by a Dialogflow agent on a No
 agent extracts the intent of the user's message and any necessary parameters and returns those to Chow Bot's
 Node backend to form a response for the user.
 ## Watch a recorded demo below!
-## Visit a [live demo](https://chow-bot.herokuapp.com] of the app!
+## Visit a [live demo](https://chow-bot.herokuapp.com) of the app!
