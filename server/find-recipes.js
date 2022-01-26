@@ -56,7 +56,7 @@ function filterCourse(recipes, courses) {
     recipes.forEach((recipe, i) => {
         let valid = false
         courses.forEach((course, i) => {
-            if (recipe.courses.includes(course)) {
+            if (recipe.course.includes(course)) {
                 valid = true;
             }
         });
