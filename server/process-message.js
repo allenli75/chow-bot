@@ -44,6 +44,7 @@ const processMessage = message => {
     });
 }
 
+/** Process parameters field of Dialogflow response */
 function processParameters(params) {
   ingredient = [];
   course = [];
