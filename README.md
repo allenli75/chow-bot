@@ -1,4 +1,4 @@
-# Chow Bot 🐾
+# Chow Bot 🍳
 ## Welcome to Chow Bot!
 Chow Bot is a web application that allows users to query recipe suggestions based on ingredients, meal type
 (breakfast, lunch, dinner, etc.), and course type (entree, side, dessert, etc.). Using a chat client built
